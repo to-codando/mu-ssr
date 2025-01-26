@@ -1,0 +1,33 @@
+{
+  "name": "taskee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "bun run server.ts",
+    "dev": "pnpm build:dev && pnpm serve & pnpm watcher",
+    "build:dev": "cross-env NODE_ENV=development bun run build.ts && pnpm copy:public",
+    "build:prod": "cross-env NODE_ENV=production bun run build.ts",
+    "deploy": "bun run build:prod && bun run serve",
+    "watcher": "run-when-changed --watch './src/**/*.ts' --exec 'bun run build:dev' --watch './public/**/*.*' --exec 'bun run build:dev'",
+    "copy:public": "cpy 'public/**/*' 'dist/'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elysiajs/html": "^1.2.0",
+    "@elysiajs/static": "^1.2.0",
+    "elysia": "^1.2.10",
+    "iares": "workspace:^*"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.2.0",
+    "bun": "^1.2.0",
+    "cpy-cli": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "run-when-changed": "^2.1.0"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "declarationDir": "./dist",
+
+    "lib": ["ESNext", "DOM"],
+    "target": "es2018",
+    "module": "esnext",
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "allowJs": true,
+
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+
+    "declaration": true, // Habilita a geração de arquivos .d.ts
+    "declarationMap": true, // Gera arquivos .map para os arquivos .d.ts
+    "composite": true,
+    "noEmit": false,
+    "noEmitOnError": true,
+    "emitDeclarationOnly": true,
+    "paths": {
+      "@/ui": ["src/ui/index.ts"]
+    }
+  },
+  "typeRoots": ["./node_modules/@types", "declarations.d.ts"],
+  "types": ["node"],
+  "exclude": ["node_modules", "dist", "config", ".vscode"],
+  "include": ["src/**/*"]
+}
